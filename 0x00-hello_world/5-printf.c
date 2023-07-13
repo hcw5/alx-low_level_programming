@@ -1,9 +1,7 @@
 #include <stdio.h>
 /*
  * main - Entry point
- * Description: a simple function that uses main as entry point
- * then prints a simple statemnt with return code 0
- * Return: Always 0 (Success)
+ * Description: a simple function that prints a string using printf
  */
 int main(void)
 {
