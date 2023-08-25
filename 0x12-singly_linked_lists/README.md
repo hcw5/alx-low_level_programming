@@ -1,1 +1,1 @@
-0x12-singly_linked_lists  tasks
+0x12. C - Singly linked lists
