@@ -1,53 +1,52 @@
 #include "main.h"
-/**
- *_strlen - count arrray
- *@s: array of elements
- *Return: i
- */
-
-int _strlen(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-	while (s[i] != '\0') /*Count character of string*/
-	{
-		i++;
-	}
-
-	return (i);
-}
+#include <stdlib.h>
 
 /**
- *str_concat - back a pointer to array
- *@s1: Array one
- *@s2: Array two
- *Return: Always an array dinamic
- */
-
+  * str_concat - Concatenates two strings of any size
+  * @s1: String 1
+  * @s2: String 2
+  *
+  * Return: the two strings concatenated, or NULL if failure
+  */
 char *str_concat(char *s1, char *s2)
 {
-	char *dst;
-	unsigned int i, j, size;
+	int i = 0, j = 0, k = 0, l = 0;
+	char *s;
 
+	if (s1 == NULL)
+		s1 = "";
 
 	if (s2 == NULL)
 		s2 = "";
 
-
-	if (dst == 0)
-	{
-		return (NULL);
-	}
-
-	for (i = 0; *(s1 + i) != '\0'; i++)
-		*(dst + i) = *(s1 + i);
-
-	for (j = 0; *(s2 + j) != '\0'; j++)
-	{
-		*(dst + i) = *(s2 + j);
+	while (s1[i])
 		i++;
+
+	while (s2[j])
+		j++;
+
+	l = i + j;
+	s = malloc((sizeof(char) * l) + 1);
+
+	if (s == NULL)
+		return (NULL);
+
+	j = 0;
+
+	while (k < l)
+	{
+		if (k <= i)
+			s[k] = s1[k];
+
+		if (k >= i)
+		{
+			s[k] = s2[j];
+			j++;
+		}
+
+		k++;
 	}
 
-	return (dst);
+	s[k] = '\0';
+	return (s);
 }
